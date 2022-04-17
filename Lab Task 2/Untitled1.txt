@@ -1,0 +1,198 @@
+/*#include<iostream >
+using namespace std;
+int main ()
+{
+    int n,k,j;
+    cin>>n;
+    cin>>k;
+    int a[n],b[k];
+    j=n+k;
+    int  c[j];
+    for(int i=0; i<n;i++)
+    {
+        cin>>a[i];
+        c[i]=a[i];
+    }
+     for(int p=0,i=n; p<k;p++,i++)
+    {
+        cin>>b[p];
+        c[i]=b[p];
+    }
+
+
+
+   for(int w=j-1; w>=0;w--)
+   {
+       cout<<c[w]<<" ";
+   }
+
+}
+*/
+/*
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a,b;
+
+
+    cin>>a;
+    int n[a];
+
+    for(int i=0; i<a; i++)
+        {cin >> n[i];}
+
+    cin >> b;
+    int r[b];
+
+    for(int i=0; i<b; i++)
+        cin >> r[i];
+
+    int p[a+b];
+    int k = 0;
+    for (int i=0; i<a; i++){
+        for (int j=0; j<b; j++){
+            if (n[i] == r[j]){
+                p[k] = n[i];
+                k++;
+            }
+        }
+    }
+    if(k==0) cout << "No common element!";
+    else {
+        cout << "Common elements are:";
+        for (int l=0; l<k; l++){
+
+                cout << p[l] << " ";
+
+                }
+            }
+
+
+    return 0;}*/
+/*
+   #include<iostream>
+using namespace std;
+
+
+int main ()
+{
+    int n, count=0;
+    int arr[7];
+    cout<<"enter the number of elemnet for value:";
+    cin>>n;
+    cout<<endl;
+    for(int i=0;i<n;i++)
+    {
+
+        cin>>arr[i];
+    }
+    cout<<"the dupplicate element are:";
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i+1;j<n;j++)
+
+        {
+            if(arr[i]==arr[j])
+            cout<<arr[j]<<" ";
+            count++;
+        }
+
+    }
+if(count!=0)
+{
+  ;
+}
+else
+    {
+    cout<<"the is no duplicate:";
+}
+}
+*/
+/*
+ #include<iostream>
+using namespace std;
+
+
+int main ()
+{
+    int n,q, count=0;
+    int arr[7];
+    cout<<"enter the number of elemnet for value:";
+    cin>>n;
+    cout<<endl;
+    for(int i=0;i<n;i++)
+    {
+
+        cin>>arr[i];
+    }
+    cout<<"input elemnts for search :";
+    cin>>q;
+    for(int i=0;i<n;i++)
+    {
+
+            if(arr[i]== q)
+            {
+            count++;}
+        }
+
+
+if(count!=0)
+{
+  cout << count<<" times in this array";
+}
+else
+    {
+    cout<<"the is no duplicate:";
+}
+}
+
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int arr1[100], arr2[100];
+    int size, i, j, count;
+    cout<<"Enter size of array: ";
+    cin>>size;
+    cout<<"Enter elements in array: ";
+    for(i=0; i<size; i++)
+    {
+        cin>>arr1[i];
+        arr2[i] = -1;
+    }
+
+
+    for(i=0; i<size; i++)
+    {
+        count = 1;
+        for(j=i+1; j<size; j++)
+        {
+            if(arr1[i]==arr1[j])
+            {
+                count++;
+                arr2[j] = 0;
+            }
+        }
+        if(arr2[i] != 0)
+        {
+            arr2[i] = count;
+        }
+    }
+
+
+    cout<<"\nFrequency of all elements of array : \n";
+    for(i=0; i<size; i++)
+    {
+        if(arr2[i] != 0)
+        {
+            cout<<arr1[i]<<" occurs "<<arr2[i]<<" times\n"<<endl;
+        }
+    }
+}
